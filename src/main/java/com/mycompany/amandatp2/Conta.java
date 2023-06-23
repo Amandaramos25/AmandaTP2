@@ -10,7 +10,8 @@ package com.mycompany.amandatp2;
  */
 public class Conta {
     private int numConta;
-    private Operacoes operacoes;
+    private Operacoes
+            operacoes;
     private double saldoAtual;
 
     public Conta() {
@@ -48,8 +49,13 @@ public class Conta {
     }
     
     public void criarConta(int nConta){
+        Conta con = new Conta();
         Lista listaContas = new Lista();
+        
         listaContas.insereInicio(nConta);
+    }
+    public Conta procure(int c){
+        for()
     }
     public void addOperacao(Operacoes opera){
         Operacoes op = new Operacoes();
