@@ -54,13 +54,6 @@ public class Conta {
         
         listaContas.insereInicio(nConta);
     }
-    public Conta procure(int c){
-        for()
-    }
-    public void addOperacao(Operacoes opera){
-        Operacoes op = new Operacoes();
-        op.criar(opera);
-    }
 
 
 }

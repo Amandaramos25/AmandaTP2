@@ -5,17 +5,34 @@
 package com.mycompany.amandatp2;
 
 public class Operacoes extends Conta{
+    private int numConta;
     private int tipo;
-    private int valor;
-    private int saldo;
+    private double valor;
+    private double saldo;
 
     public Operacoes() {
         
     }
 
-    public Operacoes(int tipo, int valor) {
+    public Operacoes(int numConta, int tipo, double valor) {
+        this.numConta = numConta;
         this.tipo = tipo;
         this.valor = valor;
+    }
+    
+    public Operacoes(int numConta, int tipo, double valor, double saldo) {
+        this.numConta = numConta;
+        this.tipo = tipo;
+        this.valor = valor;
+        this.saldo = saldo;
+    }
+
+    public int getNumConta() {
+        return numConta;
+    }
+
+    public void setNumConta(int numConta) {
+        this.numConta = numConta;
     }
 
     public int getTipo() {
@@ -26,11 +43,11 @@ public class Operacoes extends Conta{
         this.tipo = tipo;
     }
 
-    public int getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
@@ -38,18 +55,18 @@ public class Operacoes extends Conta{
         return saldo;
     }
 
-    public void setSaldo(int saldo) {
+    public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
-    public void criar(Operacoes ope){
-        int t = getTipo();
-        int v = getValor();
-        Lista listaTipoOp = new Lista();
-        listaTipoOp.insereInicio(t);
-        Lista listaValorOp = new Lista();
-        listaValorOp.insereInicio(v);
+
+    @Override
+    public String toString() {
+        return "Operacoes{" + "numConta=" + numConta + ", tipo=" + tipo + ", valor=" + valor + '}';
     }
+    
+    
+
+    
     
     
 }
