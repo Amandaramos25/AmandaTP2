@@ -4,7 +4,7 @@
  */
 package com.mycompany.amandatp2;
 
-public class Operacoes extends Conta{
+public class Operacoes {
     private int numConta;
     private int tipo;
     private double valor;
@@ -63,10 +63,9 @@ public class Operacoes extends Conta{
     public String toString() {
         return "Operacoes{" + "numConta=" + numConta + ", tipo=" + tipo + ", valor=" + valor + '}';
     }
+}
+
     
     
 
     
-    
-    
-}

@@ -12,15 +12,15 @@ import java.util.List;
 
 
 public class LerArquivo {
-    public static void main(String[] args){
-        
+    public Lista<Operacoes> Ler() {
       String path = "C:\\Users\\Amanda\\Documents\\NetBeansProjects\\AmandaTP2\\arquivosDeTeste\\nove.txt";
       
-      List<Operacoes> list = new ArrayList<Operacoes>();
+      Lista<Operacoes> list = new Lista<Operacoes>();
       
       try (BufferedReader br = new BufferedReader(new FileReader(path))){
           
             String line = br.readLine();
+            Conta c = new Conta();
             while(line!=null){
                 
                 String []vect = line.split(",");
@@ -29,19 +29,14 @@ public class LerArquivo {
                 double valor = Double.parseDouble(vect[2]);
                 
                 Operacoes op = new Operacoes(numC,tipoOp,valor);
-                list.add(op);
-                
+                list.insereInicio(op);
+
                 line = br.readLine();
-            }
-            System.out.println("OPERAÇÕES:");
-            for(Operacoes o:list){
-                System.out.println(o);
             }
       }
     catch(IOException e){
         System.out.println("Error: "+e.getMessage());
     }
-    
-        
-}
+      return list;
+    }
 }

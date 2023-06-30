@@ -10,8 +10,7 @@ package com.mycompany.amandatp2;
  */
 public class Conta {
     private int numConta;
-    private Operacoes
-            operacoes;
+    private Operacoes operacoes;
     private double saldoAtual;
 
     public Conta() {
@@ -48,11 +47,23 @@ public class Conta {
         this.saldoAtual = saldoAtual;
     }
     
-    public void criarConta(int nConta){
+    public void criarConta(int nConta, Operacoes operacoes){
         Conta con = new Conta();
+        Operacoes op = new Operacoes();
         Lista listaContas = new Lista();
+        Fila fo = new Fila(100);
         
         listaContas.insereInicio(nConta);
+        
+    }
+    public boolean procuraConta(int nConta){
+        Conta con = new Conta();
+        Lista lc = new Lista();
+        
+        if(lc.procure(nConta)==false){
+            return false;
+        }
+        else return true;
     }
 
 

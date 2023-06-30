@@ -5,12 +5,12 @@
 package com.mycompany.amandatp2;
 
 
-public class Lista {
-     private static class No{
-        public No prox; // próximo nó na lista
-        public int valor; // elemento (valor) armazenado na lista 
+public class Lista<T> {
+    private static class No<T>{
+        public No<T> prox; // próximo nó na lista
+        public T valor; // elemento (valor) armazenado na lista 
         
-        public No (int val){ //construtor do nó da lista
+        public No (T val){ //construtor do nó da lista
             valor = val; prox = null;
         }
     }
@@ -25,14 +25,14 @@ public class Lista {
     return inicio == null;
   }
     
-public boolean procure( int elem){
+public boolean procure( T elem){
     for(No nodo = inicio; nodo != null; nodo = nodo.prox)
        if (elem == nodo.valor) return true; //econtrou o elemento
     return false;                     // não encontrou o elemento
             
   }
 
-  public void insereInicio(int elem){ //insere no início da lista
+  public void insereInicio(T elem){ //insere no início da lista
         No novoNo = new No(elem);
         novoNo.prox = inicio; //novoNo -> inicio antigo
         inicio = novoNo;      // inicio -> novoNo
@@ -49,5 +49,5 @@ public boolean procure( int elem){
             str+= " "+ nodo.valor;
         return str + "\n";
     }
-
+    
 }
